@@ -1,0 +1,19 @@
+GIVEN string called infix, it contains either uppercase alphabets and 4  kinds of operators(+,-,*,/). You need to convert the string into its postfix (RPN) form.
+Algorithm:
+Maintain priority table:
+*,/ --> 3
++,- --> 2
+operands --> 1
+Step1: Take a string of same length and call it as postfix.
+Step2: Take a stack of characters and take top and set it to -1 (st[], top = -1)
+Step3: Take 2 variables i to run of input infix string j to run on output postfix string and set both to 0.
+Step4: Start running a loop on given input string
+	if infix[i] is an operand:
+		put it in the output string
+	else:
+		As long as top != -1 and
+		priority(infix[i]) <= priority(infix[i])
+			Keep on popping the element from stack and insert the output string
+
+		Push current character (infix[i]) into the stack
+Step5: If there are any operators left over in the stack directly bring them to the output string from top to bottom
